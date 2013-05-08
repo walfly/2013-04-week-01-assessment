@@ -3,7 +3,7 @@ describe('Phone', function() {
 
   beforeEach(function() {
     // Hey! You should edit this line to work for psuedo-classical.
-    phone = makePhone(5553216788);
+    phone = new Phone(5553216788);
   });
 
   it('should store the passed-in phone number', function () {
@@ -22,7 +22,7 @@ describe('SmartPhone', function () {
 
   beforeEach(function() {
     // Hey! You should edit this line to work for psuedo-classical.
-    smartPhone = makeSmartPhone(5553216788, "bacon.is@del.ico.us");
+    smartPhone = new SmartPhone(5553216788, "bacon.is@del.ico.us");
   });
 
   it('should store the passed-in phone number', function () {

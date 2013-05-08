@@ -1,24 +1,22 @@
-var makePhone = function(phoneNumber){
-  var result = {};
-  result.phoneNumber = phoneNumber;
-  result.send = function(recipientPhoneNumber, message){
-    console.log('sending the message "'+ message +'" to ' + recipientPhoneNumber);
-  }
-  return result;
+var Phone = function(phoneNumber){
+  this.phoneNumber = phoneNumber;
 };
 
-var makeSmartPhone = function(phoneNumber, phoneEmail){
-  var result = makePhone(phoneNumber);
-  result.phoneEmail = phoneEmail;
-  var oldSend = result.send;
-  result.send = function(recipientPhoneNumberOrEmail, message){
-    if(typeof recipientPhoneNumberOrEmail === 'number'){
-      var recipientPhoneNumber = recipientPhoneNumberOrEmail;
-      oldSend(recipientPhoneNumber, message);
-    } else {
-      var recipientEmail = recipientPhoneNumberOrEmail;
-      console.log('sending the message "'+ message +'" to ' + recipientEmail);
-    }
-  }
-  return result;
+Phone.prototype.send = function(recipientPhoneNumber, message){
+    console.log('sending the message "'+ message +'" to ' + recipientPhoneNumber);
+  };
+
+var SmartPhone = function(phoneNumber, phoneEmail){
+  Phone.call(this, phoneNumber);
+  this.phoneEmail = phoneEmail;
 };
+
+SmartPhone.prototype.send = function(recipientPhoneNumberOrEmail, message){
+  if(typeof recipientPhoneNumberOrEmail === 'number'){
+    var recipientPhoneNumber = recipientPhoneNumberOrEmail;
+    Phone.prototype.send(recipientPhoneNumber, message);
+  } else {
+    var recipientEmail = recipientPhoneNumberOrEmail;
+    console.log('sending the message "'+ message +'" to ' + recipientEmail);
+  }
+}
