@@ -1,0 +1,3 @@
+var dupedLetters = function(string) {
+  // code...
+};
