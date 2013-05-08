@@ -9,7 +9,7 @@ var Stack = function() {
   };
 
   this.remove = function() {
-    var removed = storage.shift();
+    var removed = storage.pop();
     return removed;
   };
 };
