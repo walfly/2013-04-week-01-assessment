@@ -1,1 +1,12 @@
 List and briefly describe the types of algorithmic complexity. Be as clear and complete as necessary to demonstrate your mastery.
+
+algorithmic complexity is a measure of the number operations required by the algorithm. 
+
+examples, 
+	a completely unpruned decision tree would be n^n
+	a single each function has complexity of n
+	a nested each has a complexity of n^2
+	operations that remain constant as n changes operate in constant time
+	logorithmic functions vary less as n grows
+	etc. 
+
